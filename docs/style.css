@@ -1,51 +1,63 @@
-/* General styling */
+/* styles.css */
+
 body {
-    font-family: 'Georgia', serif; /* Use a classic serif font for an old-fashioned look */
-    background-color: #f4f1d4; /* Light parchment color */
-    color: #3e3a31; /* Dark brown text to resemble ink */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* Header styling */
-header {
-    background-color: #d4c7a1;
-    border-bottom: 5px solid #a38968;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-family: 'Cinzel', serif; /* Fancy serif font for title */
-    font-size: 36px;
-    color: #3e3a31;
-}
-
-/* Content styling */
-.content {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
-    background-color: #fbf6e3; /* Slightly lighter parchment for the main content */
-    border: 3px solid #b79c6b; /* Border that resembles manuscript edges */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Shadow to make it look like a scroll */
-    line-height: 1.8;
-}
-
-.content p {
-    text-indent: 40px; /* Indent the first line for a classic manuscript feel */
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-/* Optional: Add some texture to the background */
-body::before {
-    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .timeline {
+    position: relative;
+    width: 80%;
+    height: 6px;
+    background-color: black;
+    margin: 0 auto;
+  }
+  
+  .timeline-point {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://www.transparenttextures.com/patterns/linen-2.png');
-    opacity: 0.3;
-}
+    top: -12px; /* Centers the points vertically on the line */
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #3498db;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .timeline-point:hover {
+    background-color: #2980b9;
+    cursor: pointer;
+  }
+  
+  /* Positioning each point along the timeline */
+  .timeline-point:nth-child(1) { left: 5%; }
+  .timeline-point:nth-child(2) { left: 30%; }
+  .timeline-point:nth-child(3) { left: 55%; }
+  .timeline-point:nth-child(4) { left: 80%; }
+  
+  /* Tooltip for showing the year */
+  .timeline-point::before {
+    content: attr(data-year);
+    position: absolute;
+    top: -30px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .timeline-point:hover::before {
+    display: block;
+  }
+  
