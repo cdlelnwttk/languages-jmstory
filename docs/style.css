@@ -28,7 +28,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 80%;
-    margin: 50px 0;
+   
 }
 
 .yearBoxes {
@@ -57,3 +57,22 @@ body {
     font-size: 50px;
 }
 
+.votingText{
+    color:white;
+    font-size: 40px;
+}
+.buttonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+}
+.buttons{
+    background-color: color-mix(in srgb, blue 40%, yellow 60%);
+    width:100px;
+    height: 30px;
+}
+
+.inputField{
+    color:white;
+}
