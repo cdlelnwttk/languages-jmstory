@@ -41,7 +41,7 @@ background-image: url('sky.jpg');
 
 #year2001{
     position: relative;
-    left:600px;
+    left:800px;
     top: -100px;
 }
 #year2002{
@@ -51,6 +51,6 @@ background-image: url('sky.jpg');
 }
 #year2003{
     position: relative;
-    left:600px;
+    left: 800px;px;
     top: -170px;
 }
