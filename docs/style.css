@@ -7,16 +7,42 @@
     top: -10px;
     font-family: "Helvetica";
     color:white;
-    padding: 20px;
+    padding: 15px;
     border: 2px solid #333;
     margin: 0;  
-     border-radius: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.47);
 
 }
 
 body{
-background-color: rgb(65, 63, 63);
+background-image: url('sky.jpg');
 } 
 
+.yearBoxes{
+    width: 250px;
+    height: 100px; 
+    background-color: #f3f3f3;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.47);
+}
 
+#year2000{
+    position: relative;
+    left:15px;
+    top:10px;
+}
+#year2001{
+    position: relative;
+    left:360px;
+    top: -90px;
+}
+#year2002{
+    position: relative;
+    left: 15px;
+    top: -60px;
+}
+#year2003{
+    position: relative;
+    left:360px;
+    top: -160px;
+}
