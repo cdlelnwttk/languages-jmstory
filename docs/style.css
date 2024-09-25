@@ -1,56 +1,51 @@
-#header{
+/* Center the header */
+#header {
     background-color: black;
     letter-spacing: 12px;
     font-size: 30px;
     text-align: center;
-    position: relative;
-    top: -10px;
     font-family: "Franklin Gothic Medium";
-    color:white;
+    color: white;
     padding: 15px;
     border: 2px solid #333;
-    margin: 0;  
+    margin: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.47);
-
+    width: 100%;
 }
 
-body{
-background-image: url('sky.jpg');
-} 
+body {
+    background-image: url('sky.jpg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
 
-.yearBoxes{
-    width: 500px;
-    height: 200px; 
+/* Container for yearBoxes */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 50px 0;
+}
+
+/* Styles for each year box */
+.yearBoxes {
+    width: 45%; /* Adjust width to fit two boxes per line */
+    height: 200px;
     background-color: #f3f3f3;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.47);
     text-align: center;
     font-family: 'Franklin Gothic Medium';
-    font-size: 70px;
-    font-style: oblique;
+    font-size: 50px;
     padding-top: 70px;
-    color:color-mix(in srgb,blue 40%, yellow 60%);
-    opacity: .9;
+    color: color-mix(in srgb, blue 40%, yellow 60%);
+    opacity: 0.9;
+    margin: 10px;
+    border-radius: 10px;
 }
 
-#year2000{
-    position: relative;
-    left:15px;
-    top:10px;
-}
-
-#year2001{
-    position: relative;
-    left:800px;
-    top: -100px;
-}
-#year2002{
-    position: relative;
-    left: 15px;
-    top: -60px;
-}
-#year2003{
-    position: relative;
-    left: 800px;px;
-    top: -170px;
-}
