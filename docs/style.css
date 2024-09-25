@@ -41,11 +41,15 @@ body {
     font-size: 80px;
     padding-top: 70px;
     color: color-mix(in srgb, blue 40%, yellow 60%);
-    opacity: 0.9;
+    opacity: 0.8;
     margin: 10px;
     border-radius: 10px;
 }
-
+.yearBoxes:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    transition: transform 0.4s;
+}
 .headers{
     color:white;
     font-family: serif;
@@ -73,8 +77,21 @@ body {
     width:100px;
     height: 30px;
 }
+.buttons:hover{
+    background-color: red;
+    transform: scale(1.5);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+    transition: transform 0.4s;
+}
 
 .inputField{
-    padding-top: 50px;
+    font-size: 20px;
+    padding-top: 20px;
     color:white;
+}
+
+#movieInput:hover{
+    transform: scale(1.5);
 }
