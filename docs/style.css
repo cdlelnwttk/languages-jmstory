@@ -24,6 +24,11 @@ background-image: url('sky.jpg');
     height: 100px; 
     background-color: #f3f3f3;
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.47);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 70px;
+    font-style: oblique;
+    padding-top: 10px;
 }
 
 #year2000{
@@ -31,6 +36,7 @@ background-image: url('sky.jpg');
     left:15px;
     top:10px;
 }
+
 #year2001{
     position: relative;
     left:360px;
