@@ -60,7 +60,7 @@ object HelloWorldServer {
         {
           complete(s"Welcome! Please do /greet /yourName to get a greeting or /sortedStringList to see a sorted list of Strings!")
         }
-      }
+      } ~
       path("greet" / Segment) { person =>
         get {
           complete(s"Hello, $person!")
