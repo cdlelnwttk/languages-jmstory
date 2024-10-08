@@ -1,4 +1,3 @@
-
 // build.sbt
 ThisBuild / scalaVersion := "2.13.12"
 
@@ -9,9 +8,6 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-actor-typed" % "[2.6,3.0)",  // Allows any version from 2.6.x up to (but not including) 3.0
       "com.typesafe.akka" %% "akka-http"        % "[10.2,11.0)", // Allows any version from 10.2.x up to (but not including) 11.0
-      "com.typesafe.akka" %% "akka-stream"     % "[2.6,3.0)",  // Allows any version from 2.6.x up to (but not including) 3.0
-      "io.circe" %% "circe-core" % "0.14.3",
-      "io.circe" %% "circe-generic" % "0.14.3",
-     "io.circe" %% "circe-parser" % "0.14.3"
+      "com.typesafe.akka" %% "akka-stream"      % "[2.6,3.0)"   // Allows any version from 2.6.x up to (but not including) 3.0
     )
   )
