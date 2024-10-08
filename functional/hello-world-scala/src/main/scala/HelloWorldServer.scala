@@ -12,14 +12,14 @@ object HelloWorldServer {
   implicit val executionContext = system.executionContext
 
   def main(args: Array[String]): Unit = {
-    // Function to read the JSON file and return its contents as a String
+
+    //Reads file
     def readFile(filePath: String): Option[String] = {
       Using(getClass.getResourceAsStream(filePath)) { stream =>
         Source.fromInputStream(stream).getLines().mkString("\n")
-      }.toOption // Convert to Option for easier error handling
+      }.toOption
     }
-
-    // Function to parse the JSON file directly by reading and parsing it
+    // Parses String From Files
     def parseJson(filePath: String): List[String] = {
       readFile(filePath) match {
         case Some(jsonString) =>
@@ -35,15 +35,7 @@ object HelloWorldServer {
       }
     }
 
-    // Define the insertion sort
-    def insertionSort(list: List[String]): List[String] = {
-      list match {
-        case Nil => Nil
-        case head :: tail =>
-          insert(head, insertionSort(tail))
-      }
-    }
-
+    // Insertion Sort Using Functional Style 
     def insert(element: String, sortedList: List[String]): List[String] = {
       sortedList match {
         case Nil => List(element)
@@ -53,8 +45,22 @@ object HelloWorldServer {
       }
     }
 
-    // Define the route after the sorting functions
+    def insertionSort(list: List[String]): List[String] = {
+      list match {
+        case Nil => Nil
+        case head :: tail =>
+          insert(head, insertionSort(tail))
+      }
+    }
+
     val route =
+      path("")
+      {
+        get
+        {
+          complete(s"Welcome! Please do /greet /yourName to get a greeting or /sortedStringList to see a sorted list of Strings!")
+        }
+      }
       path("greet" / Segment) { person =>
         get {
           complete(s"Hello, $person!")
@@ -72,6 +78,9 @@ object HelloWorldServer {
                |
                |List Sorted by Sort With:
                |${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase).mkString(", ")}
+               |
+               |List Sorted By Sorted By:
+               |${stringList.sortBy(_.toLowerCase).mkString(", ")}
                |
                |List Sorted By Insertion Sort:
                |${insertionSort(stringList).mkString(", ")}""".stripMargin
