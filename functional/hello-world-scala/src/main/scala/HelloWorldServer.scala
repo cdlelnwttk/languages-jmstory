@@ -19,15 +19,12 @@ object HelloWorldServer {
     // Read the JSON file into a List[String]
     val stringList = Using(jsonFilePath) { stream =>
       val jsonString = Source.fromInputStream(stream).getLines().mkString("\n")
-      // Print the JSON string read from the file for debugging
-      println(s"JSON String: $jsonString")
 
       // Parse the JSON string into a List[String]
       parse(jsonString) match {
         case Right(json) =>
           json.as[List[String]] match {
             case Right(list) =>
-              println(s"Parsed List: $list") // Debugging output
               list
             case Left(error) =>
               println(s"Error parsing JSON: $error")
@@ -39,8 +36,6 @@ object HelloWorldServer {
       }
     }.getOrElse(List.empty[String]) // Provide a default value in case of an error
 
-    // Print the final list
-    println(s"Final List: $stringList")
 
     // Define the route
     val route =
@@ -51,7 +46,7 @@ object HelloWorldServer {
       } ~
       path("listOfStrings") {
         get {
-          complete(stringList.mkString(", "))
+          complete(stringList.sorted.mkString(", "))
         }
       }
 
