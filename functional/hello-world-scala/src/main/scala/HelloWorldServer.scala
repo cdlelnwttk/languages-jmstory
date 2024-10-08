@@ -13,6 +13,7 @@ object HelloWorldServer {
     implicit val system = ActorSystem(Behaviors.empty, "helloWorldSystem")
     implicit val executionContext = system.executionContext
 
+
     // Specify the JSON file path in the resources folder
     val jsonFilePath = getClass.getResourceAsStream("/list.json")
 
@@ -46,7 +47,7 @@ object HelloWorldServer {
       } ~
       path("listOfStrings") {
         get {
-          complete(stringList.sorted.mkString(", "))
+          complete(s"List 1:\n${stringList.sorted.mkString(", ")}\n\nList 2:\n${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase)}")
         }
       }
 
