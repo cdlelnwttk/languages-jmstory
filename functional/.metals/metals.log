@@ -109,3 +109,7 @@ SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@37f8434
 2024.10.08 03:36:39 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
 Oct 08, 2024 3:36:40 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+2024.10.08 03:36:43 ERROR [info] [launcher] getting Scala 2.12.19 (for sbt)...
+2024.10.08 03:36:43 INFO  [info] welcome to sbt 1.10.1 (Microsoft Java 21.0.4)
+2024.10.08 03:36:46 INFO  [info] loading settings for project hello-world-scala-build-build from metals.sbt ...
+2024.10.08 03:36:46 INFO  [info] loading project definition from /workspaces/languages-jmstory/functional/hello-world-scala/project/project
