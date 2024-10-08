@@ -20,13 +20,7 @@ object HelloWorldServer {
         get {
           complete(s"Hello, $person!")
         }
-      }~
-      path("listOfStrings") {
-        get {
-          complete(stringList.mkString(", "))
-        }
       }
-
 
     // Start the server
     val bindingFuture = Http().newServerAt("localhost", 8080).bind(route)
