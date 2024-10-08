@@ -113,3 +113,26 @@ INFO: Unsupported notification method: $/setTrace
 2024.10.08 03:36:43 INFO  [info] welcome to sbt 1.10.1 (Microsoft Java 21.0.4)
 2024.10.08 03:36:46 INFO  [info] loading settings for project hello-world-scala-build-build from metals.sbt ...
 2024.10.08 03:36:46 INFO  [info] loading project definition from /workspaces/languages-jmstory/functional/hello-world-scala/project/project
+2024.10.08 03:36:49 INFO  [info] loading settings for project hello-world-scala-build from metals.sbt ...
+2024.10.08 03:36:49 INFO  [info] loading project definition from /workspaces/languages-jmstory/functional/hello-world-scala/project
+2024.10.08 03:36:53 INFO  [success] Generated .bloop/hello-world-scala-build.json
+2024.10.08 03:36:53 INFO  [success] Total time: 4 s, completed Oct 8, 2024, 3:36:54 AM
+2024.10.08 03:36:55 INFO  [info] loading settings for project root from build.sbt ...
+2024.10.08 03:36:55 INFO  [info] set current project to HelloWorldScalaApp (in build file:/workspaces/languages-jmstory/functional/hello-world-scala/)
+2024.10.08 03:37:02 INFO  [success] Generated .bloop/root-test.json
+2024.10.08 03:37:02 INFO  [success] Generated .bloop/root.json
+2024.10.08 03:37:02 INFO  [success] Total time: 7 s, completed Oct 8, 2024, 3:37:02 AM
+2024.10.08 03:37:03 INFO  time: ran 'sbt bloopInstall' in 27s
+2024.10.08 03:37:03 INFO  Attempting to connect to the build server...
+2024.10.08 03:37:03 INFO  Setting up current java home /usr/lib/jvm/msopenjdk-current in /home/vscode/.bloop/bloop.json
+2024.10.08 03:37:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /workspaces/languages-jmstory/functional/.metals/bsp.trace.json or /home/vscode/.cache/metals/bsp.trace.json
+2024.10.08 03:37:17 INFO  time: Connected to build server in 14s
+2024.10.08 03:37:17 INFO  Connected to Build server: Bloop v1.6.0
+2024.10.08 03:37:17 INFO  time: Imported build in 0.14s
+2024.10.08 03:37:17 INFO  running doctor check
+2024.10.08 03:37:17 INFO  java targets: root, root-test
+2024.10.08 03:37:21 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.08 03:37:24 INFO  Shutting down server
+2024.10.08 03:37:24 INFO  shutting down Metals
+2024.10.08 03:37:24 INFO  Shut down connection with build server.
+2024.10.08 03:37:24 INFO  Exiting server
