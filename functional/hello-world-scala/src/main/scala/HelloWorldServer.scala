@@ -7,52 +7,53 @@ import scala.io.StdIn
 import io.circe.parser._
 import scala.util.Using
 
-
 object HelloWorldServer {
-    implicit val system = ActorSystem(Behaviors.empty, "helloWorldSystem")
-    implicit val executionContext = system.executionContext
+  implicit val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "helloWorldSystem")
+  implicit val executionContext = system.executionContext
 
-     def main(args: Array[String]): Unit = {
-    def insertionSort(list: List[String]): List[String] = {
-    list match {
-      case Nil => Nil
-      case head :: tail =>
-      insert(head, insertionSort(tail))
+  def main(args: Array[String]): Unit = {
+    // Function to read the JSON file and return its contents as a String
+    def readFile(filePath: String): Option[String] = {
+      Using(getClass.getResourceAsStream(filePath)) { stream =>
+        Source.fromInputStream(stream).getLines().mkString("\n")
+      }.toOption // Convert to Option for easier error handling
     }
-  }
 
-  def insert(element: String, sortedList: List[String]): List[String] = {
-    sortedList match {
-      case Nil => List(element)
-      case head :: tail =>
-        if (element < head) element :: sortedList
-        else head :: insert(element, tail)
-    }
-  }
-
-    val fileName = getClass.getResourceAsStream("/list.json")
-    //reading in file
-    val stringList = Using(fileName) { stream =>
-      val jsonString = Source.fromInputStream(stream).getLines().mkString("\n")
-
-      // Parse the JSON string into a List[String]
-      parse(jsonString) match {
-        case Right(json) =>
-          json.as[List[String]] match {
-            case Right(list) =>
-              list
+    // Function to parse the JSON file directly by reading and parsing it
+    def parseJson(filePath: String): List[String] = {
+      readFile(filePath) match {
+        case Some(jsonString) =>
+          parse(jsonString) match {
+            case Right(json) => json.as[List[String]].getOrElse(List.empty[String])
             case Left(error) =>
               println(s"Error parsing JSON: $error")
               List.empty[String]
           }
-        case Left(error) =>
-          println(s"Error parsing JSON: $error")
+        case None =>
+          println("Error reading the JSON file.")
           List.empty[String]
       }
-    }.getOrElse(List.empty[String]) // Provide a default value in case of an error
+    }
 
+    // Define the insertion sort
+    def insertionSort(list: List[String]): List[String] = {
+      list match {
+        case Nil => Nil
+        case head :: tail =>
+          insert(head, insertionSort(tail))
+      }
+    }
 
-    // Define the route
+    def insert(element: String, sortedList: List[String]): List[String] = {
+      sortedList match {
+        case Nil => List(element)
+        case head :: tail =>
+          if (element < head) element :: sortedList
+          else head :: insert(element, tail)
+      }
+    }
+
+    // Define the route after the sorting functions
     val route =
       path("greet" / Segment) { person =>
         get {
@@ -61,20 +62,20 @@ object HelloWorldServer {
       } ~
       path("sortedStringList") {
         get {
-         complete(
-                  s"""Unsorted List:
-                  |${stringList.mkString(", ")}
-                  |
-                  |List Sorted By Built-In Sort:
-                  |${stringList.sorted.mkString(", ")}
-                  |
-                  |List Sorted by Sort With:
-                  |${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase).mkString(", ")}
-                  |
-                  |List Sorted By Insertion Sort:
-                  |${insertionSort(stringList).mkString(", ")}""".stripMargin
-                  )
-        
+           val stringList: List[String] = parseJson("/list.json")
+          complete(
+            s"""Unsorted List:
+               |${stringList.mkString(", ")}
+               |
+               |List Sorted By Built-In Sort:
+               |${stringList.sorted.mkString(", ")}
+               |
+               |List Sorted by Sort With:
+               |${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase).mkString(", ")}
+               |
+               |List Sorted By Insertion Sort:
+               |${insertionSort(stringList).mkString(", ")}""".stripMargin
+          )
         }
       }
 
@@ -88,3 +89,5 @@ object HelloWorldServer {
       .onComplete(_ => system.terminate()) // Terminate the system when done
   }
 }
+
+
