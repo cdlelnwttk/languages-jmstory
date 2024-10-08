@@ -906,3 +906,106 @@ java.lang.IllegalStateException: Missing header Content-Length in input "{"resul
 2024.10.08 04:24:26 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
 2024.10.08 04:24:26 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
 2024.10.08 04:24:26 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:35 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+Oct 08, 2024 4:26:35 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 785
+2024.10.08 04:26:36 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:55 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:55 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:55 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:56 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
+2024.10.08 04:26:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:26:57 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:41 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:51 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:51 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:51 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:56 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:58 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:58 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:58 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:58 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:27:59 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:00 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:00 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:00 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:00 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:01 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:01 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:08 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:08 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:08 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:09 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:10 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:11 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:11 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:11 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:12 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:15 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:15 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:17 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:16 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:17 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:17 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:18 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 985
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 986
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 987
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 988
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 989
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 990
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 991
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 992
+Oct 08, 2024 4:28:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 993
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:32 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:34 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:34 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
+2024.10.08 04:28:34 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:34 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:36 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
+2024.10.08 04:28:36 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:42 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:42 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:43 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
+2024.10.08 04:28:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:42 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:44 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:44 WARN  no build target for: /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala
+2024.10.08 04:28:44 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:28:44 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3

@@ -13,6 +13,23 @@ object HelloWorldServer {
     implicit val system = ActorSystem(Behaviors.empty, "helloWorldSystem")
     implicit val executionContext = system.executionContext
 
+    def insertionSort[T](list: List[T])(implicit ord: Ordering[T]): List[T] = {
+  list match {
+    case Nil => Nil // Base case: an empty list is already sorted
+    case head :: tail =>
+      insert(head, insertionSort(tail)) // Insert the head into the sorted tail
+  }
+}
+
+def insert[T](element: T, sortedList: List[T])(implicit ord: Ordering[T]): List[T] = {
+  sortedList match {
+    case Nil => List(element) // If the sorted list is empty, just add the element
+    case head :: tail =>
+      if (ord.lt(element, head)) element :: sortedList // Insert before the head if smaller
+      else head :: insert(element, tail) // Recursively insert into the tail
+  }
+}
+
 
     // Specify the JSON file path in the resources folder
     val jsonFilePath = getClass.getResourceAsStream("/list.json")
@@ -47,7 +64,7 @@ object HelloWorldServer {
       } ~
       path("listOfStrings") {
         get {
-          complete(s"List 1:\n${stringList.sorted.mkString(", ")}\n\nList 2:\n${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase)}")
+          complete(s"List 1:\n${stringList.sorted.mkString(", ")}\n\nList 2:\n${stringList.sortWith((a, b) => a.toLowerCase < b.toLowerCase)}\n\n${insertionSort(stringList)}")
         }
       }
 
