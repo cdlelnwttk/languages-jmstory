@@ -283,3 +283,101 @@ Caused by: java.io.IOException: Broken pipe
 	at java.lang.Thread.run(Thread.java:1583)
 
 2024.09.09 16:11:01 INFO  Exiting server
+2024.10.08 03:58:40 INFO  Started: Metals version 1.3.5 in folders '/workspaces/languages-jmstory/functional' for client Visual Studio Code 1.94.0.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@528dfcbb]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@70c13b78]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@528dfcbb]
+2024.10.08 03:58:41 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.08 03:58:42 INFO  Attempting to connect to the build server...
+2024.10.08 03:58:42 INFO  Setting up current java home /usr/lib/jvm/msopenjdk-current in /home/vscode/.bloop/bloop.json
+2024.10.08 03:58:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 03:59:00 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /workspaces/languages-jmstory/functional/.metals/bsp.trace.json or /home/vscode/.cache/metals/bsp.trace.json
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.12/scala-compiler-2.13.12.jar doesn't exist!
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.12/scala-reflect-2.13.12.jar doesn't exist!
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.22.0/jline-3.22.0.jar doesn't exist!
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.12/scala-compiler-2.13.12.jar doesn't exist!
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.13.12/scala-reflect-2.13.12.jar doesn't exist!
+2024.10.08 03:59:00 WARN  Scala instance jar /home/vscode/.cache/coursier/v1/https/repo1.maven.org/maven2/org/jline/jline/3.22.0/jline-3.22.0.jar doesn't exist!
+2024.10.08 03:59:00 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.ExecutionException: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:743)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:619)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+Caused by: org.eclipse.lsp4j.jsonrpc.MessageIssueException: Message could not be parsed.
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleResponseIssues(RemoteEndpoint.java:367)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handle(RemoteEndpoint.java:326)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1583)
+
+2024.10.08 03:59:00 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 03:59:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 03:59:33 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+Oct 08, 2024 3:59:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+2024.10.08 03:59:50 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:01:44 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/build.sbt. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:02:20 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:03:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:03:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:03:43 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:04:28 INFO  Shutting down server
+2024.10.08 04:04:28 INFO  shutting down Metals
+2024.10.08 04:04:28 INFO  Exiting server
+2024.10.08 04:04:52 INFO  Started: Metals version 1.3.5 in folders '/workspaces/languages-jmstory/functional' for client Visual Studio Code 1.94.0.
+SLF4J(W): Class path contains multiple SLF4J providers.
+SLF4J(W): Found provider [scribe.slf4j.ScribeServiceProvider@51398a69]
+SLF4J(W): Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@79736182]
+SLF4J(W): See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J(I): Actual provider is of type [scribe.slf4j.ScribeServiceProvider@51398a69]
+2024.10.08 04:04:52 WARN  Flyway upgrade recommended: H2 2.3.230 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.10.08 04:04:53 INFO  no build target found for /workspaces/languages-jmstory/functional/hello-world-scala/src/main/scala/HelloWorldServer.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.10.08 04:04:53 INFO  Attempting to connect to the build server...
+2024.10.08 04:04:56 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /workspaces/languages-jmstory/functional/.metals/bsp.trace.json or /home/vscode/.cache/metals/bsp.trace.json
+2024.10.08 04:04:59 INFO  time: Connected to build server in 6.13s
+2024.10.08 04:04:59 INFO  Connected to Build server: Bloop v1.6.0
+2024.10.08 04:04:59 INFO  {
+  "jsonrpc": "2.0",
+  "id": "3",
+  "error": {
+    "code": -32603,
+    "message": "java.nio.file.AccessDeniedException: /workspaces/languages-wmacevoy\n\tat java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:90)\n\tat java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)\n\tat java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)\n\tat java.base/sun.nio.fs.UnixFileSystemProvider.createDirectory(UnixFileSystemProvider.java:438)\n\tat java.base/java.nio.file.Files.createDirectory(Files.java:699)\n\tat java.base/java.nio.file.Files.createAndCheckIsDirectory(Files.java:807)\n\tat java.base/java.nio.file.Files.createDirectories(Files.java:793)\n\tat bloop.data.ClientInfo$BspClientInfo.$anonfun$getUniqueClassesDirFor$2(ClientInfo.scala:211)\n\tat bloop.data.ClientInfo$BspClientInfo.$anonfun$getUniqueClassesDirFor$2$adapted(ClientInfo.scala:198)\n\tat java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)\n\tat bloop.data.ClientInfo$BspClientInfo.getUniqueClassesDirFor(ClientInfo.scala:198)\n\tat bloop.data.Project.$anonfun$fullClasspath$1(Project.scala:132)\n\tat bloop.data.Project.$anonfun$fullClasspath$1$adapted(Project.scala:130)\n\tat scala.collection.immutable.List.foreach(List.scala:431)\n\tat bloop.data.Project.fullClasspath(Project.scala:130)\n\tat bloop.data.Project.fullClasspath(Project.scala:151)\n\tat bloop.bsp.BloopBspServices.getClasspath(BloopBspServices.scala:1376)\n\tat bloop.bsp.BloopBspServices.$anonfun$scalacOptions$1(BloopBspServices.scala:1396)\n\tat scala.collection.Iterator$$anon$10.next(Iterator.scala:461)\n\tat scala.collection.Iterator.foreach(Iterator.scala:943)\n\tat scala.collection.Iterator.foreach$(Iterator.scala:943)\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1431)\n\tat scala.collection.generic.Growable.$plus$plus$eq(Growable.scala:62)\n\tat scala.collection.generic.Growable.$plus$plus$eq$(Growable.scala:53)\n\tat scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:184)\n\tat scala.collection.mutable.ListBuffer.$plus$plus$eq(ListBuffer.scala:47)\n\tat scala.collection.TraversableOnce.to(TraversableOnce.scala:366)\n\tat scala.collection.TraversableOnce.to$(TraversableOnce.scala:364)\n\tat scala.collection.AbstractIterator.to(Iterator.scala:1431)\n\tat scala.collection.TraversableOnce.toList(TraversableOnce.scala:350)\n\tat scala.collection.TraversableOnce.toList$(TraversableOnce.scala:350)\n\tat scala.collection.AbstractIterator.toList(Iterator.scala:1431)\n\tat bloop.bsp.BloopBspServices.scalacOptions$1(BloopBspServices.scala:1394)\n\tat bloop.bsp.BloopBspServices.$anonfun$scalacOptions$3(BloopBspServices.scala:1415)\n\tat bloop.bsp.BloopBspServices.$anonfun$ifInitialized$4(BloopBspServices.scala:376)\n\tat bloop.task.Task.$anonfun$runAsync$8(Task.scala:268)\n\tat monix.eval.internal.TaskRunLoop$.startFull(TaskRunLoop.scala:170)\n\tat monix.eval.internal.TaskRestartCallback.syncOnSuccess(TaskRestartCallback.scala:101)\n\tat monix.eval.internal.TaskRestartCallback.onSuccess(TaskRestartCallback.scala:74)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.run(TaskCreate.scala:252)\n\tat monix.execution.internal.Trampoline.monix$execution$internal$Trampoline$$immediateLoop(Trampoline.scala:66)\n\tat monix.execution.internal.Trampoline.startLoop(Trampoline.scala:32)\n\tat monix.execution.schedulers.TrampolineExecutionContext$JVMOptimalTrampoline.startLoop(TrampolineExecutionContext.scala:132)\n\tat monix.execution.internal.Trampoline.execute(Trampoline.scala:40)\n\tat monix.execution.schedulers.TrampolineExecutionContext.execute(TrampolineExecutionContext.scala:57)\n\tat monix.execution.schedulers.BatchingScheduler.execute(BatchingScheduler.scala:50)\n\tat monix.execution.schedulers.BatchingScheduler.execute$(BatchingScheduler.scala:47)\n\tat monix.execution.schedulers.AsyncScheduler.execute(AsyncScheduler.scala:31)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.startExecution(TaskCreate.scala:236)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.tryOnSuccess(TaskCreate.scala:202)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.onSuccess(TaskCreate.scala:195)\n\tat bloop.task.Task$.result$2(Task.scala:465)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3(Task.scala:475)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3$adapted(Task.scala:473)\n\tat scala.concurrent.impl.CallbackRunnable.run(Promise.scala:74)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)\n\tat java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)\n"
+  }
+}
+Oct 08, 2024 4:05:00 AM org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer fireError
+SEVERE: Missing header Content-Length in input "backForCreate.run(TaskCreate.scala:252)\n\tat monix.execution.internal.Trampoline.monix$execution$internal$Trampoline$$immediateLoop(Trampoline.scala:66)\n\tat monix.execution.internal.Trampoline.startLoop(Trampoline.scala:32)\n\tat monix.execution.schedulers.TrampolineExecutionContext$JVMOptimalTrampoline.startLoop(TrampolineExecutionContext.scala:132)\n\tat monix.execution.internal.Trampoline.execute(Trampoline.scala:40)\n\tat monix.execution.schedulers.TrampolineExecutionContext.execute(TrampolineExecutionContext.scala:57)\n\tat monix.execution.schedulers.BatchingScheduler.execute(BatchingScheduler.scala:50)\n\tat monix.execution.schedulers.BatchingScheduler.execute$(BatchingScheduler.scala:47)\n\tat monix.execution.schedulers.AsyncScheduler.execute(AsyncScheduler.scala:31)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.startExecution(TaskCreate.scala:236)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.tryOnSuccess(TaskCreate.scala:202)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.onSuccess(TaskCreate.scala:195)\n\tat bloop.task.Task$.result$2(Task.scala:465)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3(Task.scala:475)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3$adapted(Task.scala:473)\n\tat scala.concurrent.impl.CallbackRunnable.run(Promise.scala:74)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)\n\tat java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)\n"
+    },
+    "id": "3",
+    "jsonrpc": "2.0"
+}Content-Length: 10089
+
+"
+java.lang.IllegalStateException: Missing header Content-Length in input "backForCreate.run(TaskCreate.scala:252)\n\tat monix.execution.internal.Trampoline.monix$execution$internal$Trampoline$$immediateLoop(Trampoline.scala:66)\n\tat monix.execution.internal.Trampoline.startLoop(Trampoline.scala:32)\n\tat monix.execution.schedulers.TrampolineExecutionContext$JVMOptimalTrampoline.startLoop(TrampolineExecutionContext.scala:132)\n\tat monix.execution.internal.Trampoline.execute(Trampoline.scala:40)\n\tat monix.execution.schedulers.TrampolineExecutionContext.execute(TrampolineExecutionContext.scala:57)\n\tat monix.execution.schedulers.BatchingScheduler.execute(BatchingScheduler.scala:50)\n\tat monix.execution.schedulers.BatchingScheduler.execute$(BatchingScheduler.scala:47)\n\tat monix.execution.schedulers.AsyncScheduler.execute(AsyncScheduler.scala:31)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.startExecution(TaskCreate.scala:236)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.tryOnSuccess(TaskCreate.scala:202)\n\tat monix.eval.internal.TaskCreate$CallbackForCreate.onSuccess(TaskCreate.scala:195)\n\tat bloop.task.Task$.result$2(Task.scala:465)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3(Task.scala:475)\n\tat bloop.task.Task$.$anonfun$parSequenceUnordered$3$adapted(Task.scala:473)\n\tat scala.concurrent.impl.CallbackRunnable.run(Promise.scala:74)\n\tat java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1423)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)\n\tat java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)\n"
+    },
+    "id": "3",
+    "jsonrpc": "2.0"
+}Content-Length: 10089
+
+"
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:114)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+Oct 08, 2024 4:05:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
