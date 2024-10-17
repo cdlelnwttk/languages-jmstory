@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        /* Simple styling */
+        #task-list {
+            margin-top: 20px;
+        }
+        .task {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Task Manager</h1>
+
+    <!-- Task Input Section -->
+    <div>
+        <input type="text" id="task-name" placeholder="Enter task name">
+        <input type="text" id="task-description" placeholder="Enter task description">
+        <button id="add-task">Add Task</button>
+    </div>
+
+    <!-- Task List -->
+    <div id="task-list">
+        <h2>Current Tasks</h2>
+        <ul id="tasks">
+            <!-- Tasks will be dynamically added here -->
+        </ul>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+
+
