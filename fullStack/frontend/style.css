@@ -1,0 +1,27 @@
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #animal-list {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  #animal-detail {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  #animal-detail img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #animal-detail input, #animal-detail textarea {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+  
