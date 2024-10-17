@@ -1,0 +1,14 @@
+{
+    "name": "movie-game-backend",
+    "version": "1.0.0",
+    "description": "Movie poster guessing game backend",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "pg": "^8.7.1"
+    }
+  }
+  

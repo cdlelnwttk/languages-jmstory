@@ -1,49 +1,102 @@
-const addTaskBtn = document.getElementById('add-task');
-const taskList = document.getElementById('tasks');
-const taskNameInput = document.getElementById('task-name');
-const taskDescriptionInput = document.getElementById('task-description');
+// File: public/script.js
 
-// Function to fetch tasks from the server and display them
-function fetchTasks() {
-    fetch('/tasks')
-        .then(response => response.json())
-        .then(tasks => {
-            taskList.innerHTML = ''; // Clear the list before re-rendering
-            tasks.forEach(task => {
-                const li = document.createElement('li');
-                li.className = 'task';
-                li.textContent = `${task.name}: ${task.description}`;
-                taskList.appendChild(li);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching tasks:', error);
-        });
+let userId = null; // To store the registered/logged-in user ID
+let gameId = null; // To store the current game ID
+const maxAttempts = 6; // Maximum number of incorrect attempts allowed
+
+// Register a new user
+async function registerUser() {
+  const username = document.getElementById('register-username').value;
+  if (!username) return alert('Username cannot be empty!');
+
+  const response = await fetch('/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username }),
+  });
+  const data = await response.json();
+
+  if (response.ok) {
+    userId = data.id;
+    document.getElementById('auth-section').style.display = 'none';
+    document.getElementById('game-controls').style.display = 'block';
+  } else {
+    alert(data.error);
+  }
 }
 
-// Call the fetchTasks function on page load to show the current tasks
-fetchTasks();
 
-// Function to add a new task
-addTaskBtn.addEventListener('click', () => {
-    const taskName = taskNameInput.value.trim();
-    const taskDescription = taskDescriptionInput.value.trim();
+// Start a new game
+async function startGame() {
 
-    if (taskName && taskDescription) {
-        fetch('/tasks', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: taskName, description: taskDescription })
-        })
-        .then(response => response.json())
-        .then(() => {
-            taskNameInput.value = '';  // Clear the input fields
-            taskDescriptionInput.value = '';
-            fetchTasks();  // Refresh the task list
-        })
-        .catch(error => {
-            console.error('Error adding task:', error);
-        });
+  const response = await fetch('/start', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId }),
+  });
+  const data = await response.json();
+
+  if (response.ok) {
+    gameId = data.gameId;
+    displayGameState();
+    document.getElementById('game-controls').style.display = 'none';
+    document.getElementById('game-section').style.display = 'block';
+  } else {
+    alert(data.error);
+  }
+}
+
+// Display the current state of the game
+async function displayGameState() {
+  const response = await fetch(`/state?gameId=${gameId}`);
+  const data = await response.json();
+
+  if (response.ok) {
+    document.getElementById('word-state').textContent = data.wordState;
+    document.getElementById('guessed-letters').textContent = data.guessedLetters.join(', ') || '-';
+    document.getElementById('remaining-attempts').textContent = data.remainingAttempts;
+    updateHangmanImage(data.remainingAttempts);
+  } else {
+    alert(data.error);
+  }
+}
+
+// Update the hangman image based on the remaining attempts
+function updateHangmanImage(remainingAttempts) {
+  const attemptsUsed = maxAttempts - remainingAttempts;
+  const hangmanImage = document.getElementById('hangman-image');
+  hangmanImage.src = `why${attemptsUsed}.jpg`; // Update image based on wrong guesses
+}
+
+// Make a letter guess
+async function makeGuess() {
+  const letter = document.getElementById('letter-input').value;
+  if (!letter || letter.length !== 1) return alert('Please enter a single letter!');
+
+  const response = await fetch('/guess', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ gameId, letter }),
+  });
+  const data = await response.json();
+
+  if (response.ok) {
+    displayGameState();
+    if (data.status === 'won' || data.status === 'lost') {
+      document.getElementById('result-section').style.display = 'block';
+      document.getElementById('result-message').textContent = `You ${data.status}! The word was: ${data.word}`;
+      document.getElementById('game-section').style.display = 'none';
     }
-});
+  } else {
+    alert(data.error);
+  }
+}
 
+// Reset the game
+function resetGame() {
+  document.getElementById('result-section').style.display = 'none';
+  document.getElementById('game-section').style.display = 'none';
+  document.getElementById('game-controls').style.display = 'block';
+  gameId = null;
+  updateHangmanImage(maxAttempts); // Reset hangman image
+}
