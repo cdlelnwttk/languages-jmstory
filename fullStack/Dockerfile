@@ -1,21 +1,28 @@
-# Backend (Node.js)
-# Use an official Node runtime as a parent image
-FROM node:16
+# Dockerfile
+
+# Use an official Node.js image as the base image
+FROM node:18-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json to the container
-COPY backend/package*.json ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
 
-# Install dependencies
+# Install Node.js dependencies
 RUN npm install
 
-# Copy the rest of the backend files into the container
-COPY backend/ .
+# Copy the rest of the application code
+COPY . .
 
-# Expose port 5000
-EXPOSE 5000
+# Expose the port the app will run on
+EXPOSE 3000
 
-# Command to run the server
-CMD ["node", "server.js"]
+ENV DB_USER=your-username
+ENV DB_PASSWORD=your-password
+ENV DB_HOST=db
+ENV DB_PORT=5432
+ENV DB_DATABASE=your-database
+
+# Start the application
+CMD ["npm", "start"]
