@@ -64,15 +64,16 @@ app.get('/image/:imageName', async (req, res) => {
 
 // Route to handle adding new image data
 app.post('/add-image', async (req, res) => {
-    const { name, description, comment} = req.body;  // Extract image URL and description from request body
+    console.log("here after the form");
+    const {name, description, comment} = req.body;  // Extract image URL and description from request body
   
-    if (!imageUrl || !description) {
-      return res.status(400).json({ success: false, message: 'Image URL and description are required.' });
-    }
+    // if (!imageUrl || !description) {
+    //   return res.status(400).json({ success: false, message: 'Image URL and description are required.' });
+    // }
   
     try {
       // Insert data into the database (adjust table/columns as needed)
-      const query = 'INSERT INTO  (name, state, comment) VALUES ($1, $2, $3) RETURNING *';
+      const query = 'INSERT INTO dog (name, state, comment) VALUES ($1, $2, $3) RETURNING *';
       const values = [name, description, comment];
   
       const result = await pool.query(query, values); // Execute the query

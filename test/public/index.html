@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animal Gallery</title>
+  <title>User List</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +12,10 @@
 
     <div class="gallery-view">
     <div class="grid-container">
-        <img src="dog.jpg" alt="lemon beagle looking at sky" class="animalPictures" data-name="dog" />
-        <img src="pig.jpg" alt="pink pig peaking out" class="animalPictures" data-name="pig" />
-        <img src="cow.jpg" alt="cow sitting on grass" class="animalPictures" data-name="cow" />
-        <img src="armadillo.jpg" alt="armadillo standing up" class="animalPictures" data-name="armadillo" />
+    <img src = "dog.jpg" alt = "lemon beagle looking at sky" class = "animalPictures" class = "dog"/>
+    <img src = "pig.jpg" alt = "pink pig peaking out" class = "animalPictures" class = "pig"/>
+    <img src = "cow.jpg" alt = "cow sitting on grass" class = "animalPictures"  class = "cow"/>
+    <img src = "armadillo.jpg" alt = "armadillo standing up" class = "animalPictures" class = "armadillo"/>
     </div>
 </div>
 
@@ -31,18 +31,16 @@
             <th>ID</th>
             <th>Image URL</th>
             <th>Description</th>
-            <th>Comment</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           <!-- Rows will be inserted here -->
         </tbody>
       </table>
-
       <form id="addData" style="display: none;">
-        <input type="hidden" id="imageName" name="imageName" />
-        <label for="imageUrl">Image URL:</label>
-        <input type="text" id="imageUrl" name="imageUrl" required><br><br>
+        <label for="name">Image URL:</label>
+        <input type="text" id="name" name="name" required><br><br>
       
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" required><br><br>
@@ -52,10 +50,12 @@
         <button type="submit">Add Image Data</button>
       </form>
       
-      <div id="responseMessage"></div>
+      <!-- Container for confirmation or error message -->
+      <div id="responseMessage">
+    
+      </div>
 </div>
-
-<script src="script.js"></script>
+</div>
+  <script src="script.js"></script>
 </body>
 </html>
-

@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('addData').style.display = 'none';
       }
     }
-    document.getElementById('addData').dataset.imageName = globalImage;
     
     function fetchImageData(imageElement) {
         console.log("show this on console");
@@ -64,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
     function displayImageData(imageData) {
+        
         console.log("imageData:", imageData); 
       const tableBody = document.getElementById('imageDataTable') ? document.getElementById('imageDataTable').getElementsByTagName('tbody')[0] : null;
   
@@ -95,45 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    // Capture the form submission
-document.getElementById('addData').addEventListener('submit', function(event) {
-    console.log("here for the form");
-    event.preventDefault();  // Prevent the form from submitting the traditional way
-  
-    // Get the form input values
-    const imageUrl = document.getElementById('imageUrl').value;
-    const description = document.getElementById('description').value;
-    const comment = document.getElementById('comment').value;
-    // Create an object to send to the server
-    const data = {
-      imageUrl: imageUrl,
-      description: description,
-      comment : comment
-    };
-    // Send the data to the server using fetch (POST request)
-    fetch('/add-image', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-      // Handle the server response (success or error)
-      const messageElement = document.getElementById('responseMessage');
-      if (data.success) {
-        messageElement.textContent = 'Image data added successfully!';
-        messageElement.style.color = 'green';
-      } else {
-        messageElement.textContent = 'Error adding image data: ' + data.message;
-        messageElement.style.color = 'red';
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+
   });
   
-  });
   
