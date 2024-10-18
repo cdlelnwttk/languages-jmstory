@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
       // Show the gallery view and hide the enlarged view
       galleryView.style.display = 'flex';
       enlargedView.style.display = 'none';
+      responseMessage.style.display = 'none';
       if (imageDataTable) {
         console.log("why is not hidden");
         imageDataTable.style.display = 'none'; // Ensure the table is hidden when going back to the gallery
-        document.getElementById('addData').style.display = 'none';
+        document.getElementById('AddComment').style.display = 'none';
       }
     }
     
@@ -55,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.success) {
                 console.log("inside the data success loop");
               displayImageData(data.data);
+              const form = document.getElementById('AddComment');
+              form.addEventListener('submit', (event) => handleFormSubmit(event, imageName));
             } else {
               console.error("No data found for image: " + imageName);
             }
@@ -90,12 +93,63 @@ document.addEventListener('DOMContentLoaded', function() {
         cell4.textContent = item.created_at;
 
         document.getElementById('imageDataTable').style.display = 'table';
-        document.getElementById('addData').style.display = 'block';
+        document.getElementById('AddComment').style.display = 'block';
 
       });
     }
 
+    function handleFormSubmit(event, imageElement) {
+        event.preventDefault();
 
+        const name = document.getElementById('name').value;
+        const description = document.getElementById('description').value;
+        const comment = document.getElementById('comment').value;
+
+        const data = {
+            name: name,
+            description: description,
+            comment: comment
+        };
+        fetch(`/add-image/${imageElement}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            const messageElement = document.getElementById('responseMessage');
+            if (data.success) {
+                refreshTable(imageElement);
+                responseMessage.style.display = 'inline';
+                messageElement.textContent = 'comment added to wall successfully!';
+                messageElement.style.color = 'green';
+                document.getElementById('name').value = '';
+                document.getElementById('description').value = '';
+                document.getElementById('comment').value = '';
+            } else {
+                messageElement.textContent = 'Error adding image data: ' + data.message;
+                messageElement.style.color = 'red';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function refreshTable(imageName) {
+        // Fetch the updated data from the server (use your appropriate API to fetch all data)
+        fetch(`/image/${imageName}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log("refreshing table here");
+                    // Assuming 'imageDataTable' is the table where image data is displayed
+                    displayImageData(data.data);  // Re-render the table with the new data
+                } else {
+                    console.error("Error fetching updated data:", data.message);
+                }
+            })
+            .catch(error => console.error("Error refreshing the table:", error));
+    }
   });
-  
   

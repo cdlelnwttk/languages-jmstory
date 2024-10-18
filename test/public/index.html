@@ -25,29 +25,29 @@
         <button class="back-to-gallery-button">Back to Gallery</button>
     </div>
 
-    <table id="imageDataTable" class="hidden-table" style="display: none;">
+    <table id="imageDataTable" class="table" style="display: none;">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Image URL</th>
-            <th>Description</th>
-            <th>Description</th>
+            <th>Name</th>
+            <th>State</th>
+            <th>Comment</th>
+            <th>Time Stamp</th>
           </tr>
         </thead>
         <tbody>
           <!-- Rows will be inserted here -->
         </tbody>
       </table>
-      <form id="addData" style="display: none;">
-        <label for="name">Image URL:</label>
+      <form id="AddComment" style="display: none;">
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
       
-        <label for="description">Description:</label>
+        <label for="description">State:</label>
         <input type="text" id="description" name="description" required><br><br>
 
         <label for="comment">Comment:</label>
         <input type="text" id="comment" name="comment" required><br><br>
-        <button type="submit">Add Image Data</button>
+        <button type="submit">Add Comment</button>
       </form>
       
       <!-- Container for confirmation or error message -->

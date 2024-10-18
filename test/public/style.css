@@ -111,11 +111,7 @@ h1{
     overflow: auto;  /* Adds scrollbars if the table gets too long */
   }
 
-.hiddenTable{
+.table{
     background-color: white;
     display: none;
-}
-
-form{
-    align-self: right;
 }

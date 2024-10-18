@@ -61,28 +61,23 @@ app.get('/image/:imageName', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch image data' });
     }
 });
-
-// Route to handle adding new image data
-app.post('/add-image', async (req, res) => {
+app.post('/add-image/:imageName', async (req, res) => {
     console.log("here after the form");
-    const {name, description, comment} = req.body;  // Extract image URL and description from request body
-  
-    // if (!imageUrl || !description) {
-    //   return res.status(400).json({ success: false, message: 'Image URL and description are required.' });
-    // }
-  
+
+    const imageName = req.params.imageName;  // The image name passed (e.g., 'dog.jpg')
+    const { name, description, comment } = req.body;  // Extract name, description, and comment from request body
+
     try {
-      // Insert data into the database (adjust table/columns as needed)
-      const query = 'INSERT INTO dog (name, state, comment) VALUES ($1, $2, $3) RETURNING *';
-      const values = [name, description, comment];
-  
-      const result = await pool.query(query, values); // Execute the query
-  
-      // Respond with success and the inserted data
-      res.status(200).json({ success: true, data: result.rows[0] });
+        // Dynamically create the query using imageName
+        const query = `INSERT INTO "${imageName}" (name, state, comment) VALUES ($1, $2, $3) RETURNING *`;
+        const values = [name, description, comment];
+
+        const result = await pool.query(query, values);  // Execute the query
+
+        // Respond with success and the inserted data
+        res.status(200).json({ success: true, data: result.rows[0] });
     } catch (error) {
-      console.error('Error inserting data:', error);
-      res.status(500).json({ success: false, message: 'Error adding image data to the database.' });
+        console.error('Error inserting data:', error);
+        res.status(500).json({ success: false, message: 'Error adding image data to the database.' });
     }
-  });
-  
+});
