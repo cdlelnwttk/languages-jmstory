@@ -8,8 +8,21 @@
 </head>
 <body>
   <div class="container">
-    <h1>User Information</h1>
-    <button id="fetchUsers">Show Users</button>
+    <h1>Click on an animal!</h1>
+
+    <div class="gallery-view">
+    <div class="grid-container">
+    <img src = "dog.jpg" alt = "lemon beagle looking at sky" class = "animalPictures" class = "dog" onclick="showImage('dog.jpg')" onclick="fetchImageData(this)" />
+    <img src = "pig.jpg" alt = "pink pig peaking out" class = "animalPictures" class = "pig"/>
+    <img src = "cow.jpg" alt = "cow sitting on grass" class = "animalPictures"  class = "cow"/>
+    <img src = "armadillo.jpg" alt = "armadillo standing up" class = "animalPictures" class = "armadillo"/>
+    </div>
+    </div>
+    <div class="enlarged-view" style="display: none;">
+        <img id="enlarged-image" src="" alt="Enlarged Image" />
+        <button onclick="backToGallery()">Back to Gallery</button>
+      </div>
+
     <div id="userTable"></div>
   </div>
   <script src="script.js"></script>

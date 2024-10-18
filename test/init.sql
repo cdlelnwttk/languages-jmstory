@@ -1,14 +1,14 @@
 DROP TABLE IF EXISTS users;
 
 -- Create the users table
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(50),
-    email VARCHAR(50)
+CREATE TABLE dog (
+    id serial,
+    name text,
+    state text,
+    comment text,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Insert some default data into the table
-INSERT INTO users (name, email) VALUES
-('John Doe', 'john@example.com'),
-('Jane Smith', 'jane@example.com'),
-('test', 'jane@example.com');
+INSERT INTO dog (name, state, comment) VALUES
+('jane', 'PA', 'This is a lemon beagle, leave a comment on his wall!');

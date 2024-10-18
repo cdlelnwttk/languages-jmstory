@@ -34,3 +34,64 @@ document.getElementById('fetchUsers').addEventListener('click', async () => {
     }
   });
   
+  // Function to show the clicked image in enlarged view
+function showImage(imageSrc) {
+    const galleryView = document.querySelector('.gallery-view');
+    const enlargedView = document.querySelector('.enlarged-view');
+    const enlargedImage = document.getElementById('enlarged-image');
+  
+    // Hide the gallery view and show the enlarged view
+    galleryView.style.display = 'none';
+    enlargedView.style.display = 'flex';
+  
+    // Set the clicked image as the source for the enlarged image
+    enlargedImage.src = imageSrc;
+  }
+  
+  // Function to go back to the gallery view
+  function backToGallery() {
+    const galleryView = document.querySelector('.gallery-view');
+    const enlargedView = document.querySelector('.enlarged-view');
+  
+    // Show the gallery view and hide the enlarged view
+    galleryView.style.display = 'flex';
+    enlargedView.style.display = 'none';
+  }
+  
+  function fetchImageData(tableName) {
+    // Fetch the data from the backend based on the table name
+    fetch(`/image/${tableName}`)
+      .then(response => response.json())
+      .then(data => {
+        // Display the enlarged image and details
+        document.getElementById('enlarged-image').src = data.image_url;
+        document.getElementById('description').textContent = data.description;
+        
+        // Show the details section
+        document.getElementById('image-details').style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Error fetching image data:', error);
+      });
+  }
+
+  function fetchImageData(imageElement) {
+    // Get the image file name without the extension
+    const imageName = imageElement.src.split('/').pop().split('.')[0]; // Strip the .jpg extension
+    console.log("Image name (table):", imageName); // Check the table name being used
+
+    // Fetch the data from the backend based on the image name
+    fetch(`/image/${imageName}`)
+      .then(response => response.json())
+      .then(data => {
+        // Display the enlarged image and details
+        document.getElementById('enlarged-image').src = data.image_url;
+        document.getElementById('description').textContent = data.description;
+
+        // Show the details section
+        document.getElementById('image-details').style.display = 'block';
+      })
+      .catch(error => {
+        console.error('Error fetching image data:', error);
+      });
+  }

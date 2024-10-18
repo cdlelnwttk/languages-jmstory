@@ -22,6 +22,34 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
+// Parse JSON body
+app.use(express.json());
+
+app.get('/image/:tableName', async (req, res) => {
+    const { tableName } = req.params;
+  
+    // To prevent SQL injection, make sure the table name is sanitized, possibly whitelist the table names
+    const allowedTables = ['dog', 'cow', 'pig', 'armadillo'];
+    
+    if (!allowedTables.includes(tableName)) {
+      return res.status(400).json({ message: 'Invalid table name' });
+    }
+  
+    try {
+      const queryText = `SELECT * FROM ${tableName}`; // Fetch one record for simplicity
+      const result = await pool.query(queryText);
+  
+      if (result.rows.length > 0) {
+        res.json(result.rows[0]);
+      } else {
+        res.status(404).json({ message: 'Image not found' });
+      }
+    } catch (err) {
+      console.error('Error fetching image data:', err);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
