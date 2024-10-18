@@ -1,7 +1,6 @@
-DROP TABLE IF EXISTS users;
 
 -- Create the users table
-CREATE TABLE dog (
+CREATE TABLE IF NOT EXISTS dog (
     id serial,
     name text,
     state text,

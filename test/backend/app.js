@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { initDb, getUsers } = require('./database');
+const { initDb, getUsers, pool } = require('./database');
 
 const app = express();
 const PORT = 3000;
@@ -22,35 +22,66 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-// Parse JSON body
-app.use(express.json());
-
-app.get('/image/:tableName', async (req, res) => {
-    const { tableName } = req.params;
-  
-    // To prevent SQL injection, make sure the table name is sanitized, possibly whitelist the table names
-    const allowedTables = ['dog', 'cow', 'pig', 'armadillo'];
-    
-    if (!allowedTables.includes(tableName)) {
-      return res.status(400).json({ message: 'Invalid table name' });
-    }
-  
-    try {
-      const queryText = `SELECT * FROM ${tableName}`; // Fetch one record for simplicity
-      const result = await pool.query(queryText);
-  
-      if (result.rows.length > 0) {
-        res.json(result.rows[0]);
-      } else {
-        res.status(404).json({ message: 'Image not found' });
-      }
-    } catch (err) {
-      console.error('Error fetching image data:', err);
-      res.status(500).json({ message: 'Server error' });
-    }
-  });
-
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+// Parse JSON body
+app.use(express.json());
+
+app.get('/image/:imageName', async (req, res) => {
+    let imageName = req.params.imageName;  // The image name passed (e.g., 'dog.jpg')
+    
+    
+
+    console.log(`Fetching data for image: ${imageName}`); 
+
+    try {
+
+        // Fetch data from the database related to the image (using the table name that matches the image name)
+    
+        const queryResult = await pool.query(`SELECT * FROM ${imageName}`); // Assuming the table name matches the image name
+        const imageData = queryResult.rows;  // Get all rows from the table
+
+        if (imageData.length > 0) {
+            // Send the fetched data to the frontend
+            res.json({
+                success: true,
+                data: imageData
+            });
+        } else {
+            res.json({
+                success: false,
+                message: 'No data found for the image'
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching image data:', error);
+        res.status(500).json({ error: 'Failed to fetch image data' });
+    }
+});
+
+// Route to handle adding new image data
+app.post('/add-image', async (req, res) => {
+    const { name, description, comment} = req.body;  // Extract image URL and description from request body
+  
+    if (!imageUrl || !description) {
+      return res.status(400).json({ success: false, message: 'Image URL and description are required.' });
+    }
+  
+    try {
+      // Insert data into the database (adjust table/columns as needed)
+      const query = 'INSERT INTO  (name, state, comment) VALUES ($1, $2, $3) RETURNING *';
+      const values = [name, description, comment];
+  
+      const result = await pool.query(query, values); // Execute the query
+  
+      // Respond with success and the inserted data
+      res.status(200).json({ success: true, data: result.rows[0] });
+    } catch (error) {
+      console.error('Error inserting data:', error);
+      res.status(500).json({ success: false, message: 'Error adding image data to the database.' });
+    }
+  });
+  

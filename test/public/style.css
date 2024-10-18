@@ -76,7 +76,6 @@ h1{
     justify-content: left;
     align-items: left;
     flex-direction: column;
-    height: 100vh;
   }
   
   #enlarged-image {
@@ -92,3 +91,31 @@ h1{
     font-size: 16px;
     cursor: pointer;
   }
+  .enlarged-container {
+    display: flex;
+    justify-content: space-between;  /* Places content to the left and right */
+    align-items: flex-start;         /* Aligns items to the top */
+    margin: 20px;
+  }
+  
+  .enlarged-view {
+    flex: 1;  /* Makes the image take up available space */
+    display: flex;
+    justify-content: center;
+  }
+  
+  #imageDataTableContainer {
+    flex: 1;  /* Makes the table take up available space */
+    padding: 20px;
+    max-width: 400px; /* Limits the width of the table */
+    overflow: auto;  /* Adds scrollbars if the table gets too long */
+  }
+
+.hiddenTable{
+    background-color: white;
+    display: none;
+}
+
+form{
+    align-self: right;
+}

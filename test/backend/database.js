@@ -40,4 +40,4 @@ const getUsers = async () => {
   }
 };
 
-module.exports = { initDb, getUsers };
+module.exports = { initDb, getUsers, pool };

@@ -3,28 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User List</title>
+  <title>Animal Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <h1>Click on an animal!</h1>
 
     <div class="gallery-view">
     <div class="grid-container">
-    <img src = "dog.jpg" alt = "lemon beagle looking at sky" class = "animalPictures" class = "dog" onclick="showImage('dog.jpg')" onclick="fetchImageData(this)" />
-    <img src = "pig.jpg" alt = "pink pig peaking out" class = "animalPictures" class = "pig"/>
-    <img src = "cow.jpg" alt = "cow sitting on grass" class = "animalPictures"  class = "cow"/>
-    <img src = "armadillo.jpg" alt = "armadillo standing up" class = "animalPictures" class = "armadillo"/>
+        <img src="dog.jpg" alt="lemon beagle looking at sky" class="animalPictures" data-name="dog" />
+        <img src="pig.jpg" alt="pink pig peaking out" class="animalPictures" data-name="pig" />
+        <img src="cow.jpg" alt="cow sitting on grass" class="animalPictures" data-name="cow" />
+        <img src="armadillo.jpg" alt="armadillo standing up" class="animalPictures" data-name="armadillo" />
     </div>
-    </div>
+</div>
+
+<div class="enlarged-container">
     <div class="enlarged-view" style="display: none;">
         <img id="enlarged-image" src="" alt="Enlarged Image" />
-        <button onclick="backToGallery()">Back to Gallery</button>
-      </div>
+        <button class="back-to-gallery-button">Back to Gallery</button>
+    </div>
 
-    <div id="userTable"></div>
-  </div>
-  <script src="script.js"></script>
+    <table id="imageDataTable" class="hidden-table" style="display: none;">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Image URL</th>
+            <th>Description</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <form id="addData" style="display: none;">
+        <input type="hidden" id="imageName" name="imageName" />
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="imageUrl" name="imageUrl" required><br><br>
+      
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment" required><br><br>
+        <button type="submit">Add Image Data</button>
+      </form>
+      
+      <div id="responseMessage"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
