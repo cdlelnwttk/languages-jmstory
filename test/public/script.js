@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const imageElements = document.querySelectorAll('.animalPictures');  // Select all images with class "animalPictures"
-    console.log(imageElements);
 
     let currentImageName = ''; // Variable to store the currently selected image name
 
@@ -51,18 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to fetch image data
     function fetchImageData(imageElement) {
-        console.log("show this on console");
         showImage(imageElement.src);
 
         currentImageName = imageElement.src.split('/').pop().split('.')[0];  // Extract the image name without the extension
 
-        console.log("Fetching data for image: " + currentImageName);
 
         fetch(`/image/${currentImageName}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log("inside the data success loop");
                     displayImageData(data.data);
                 } else {
                     console.error("No data found for image: " + currentImageName);
@@ -73,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to display image data
     function displayImageData(imageData) {
-        console.log("imageData:", imageData);
         const tableBody = document.getElementById('imageDataTable') ? document.getElementById('imageDataTable').getElementsByTagName('tbody')[0] : null;
 
         if (!tableBody) {
@@ -171,7 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    console.log("refreshing table here");
                     // Assuming 'imageDataTable' is the table where image data is displayed
                     displayImageData(data.data);  // Re-render the table with the new data
                 } else {

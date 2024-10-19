@@ -5,7 +5,7 @@ const path = require('path');
 // Create a pool of connections to the database
 const pool = new Pool({
   user: 'fullstack',
-  host: 'localhost',
+  host: 'db',
   database: 'fullstack',
   password: 'password',
   port: 5432,
@@ -21,7 +21,6 @@ const initDb = async () => {
 
     // Execute SQL file
     await client.query(sql);
-    console.log("Database initialized with schema and data");
   } catch (error) {
     console.error('Error executing SQL file', error);
   } finally {

@@ -1,4 +1,7 @@
-
+DROP TABLE IF EXISTS dog;
+DROP TABLE IF EXISTS pig;
+DROP TABLE IF EXISTS cow;
+DROP TABLE IF EXISTS armadillo;
 -- Create the users table
 CREATE TABLE IF NOT EXISTS dog (
     id serial,

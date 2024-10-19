@@ -59,7 +59,7 @@ app.get('/image/:imageName', async (req, res) => {
 });
 
 app.post('/add-image/:imageName', async (req, res) => {
-    console.log("here after the form");
+
 
     const imageName = req.params.imageName;  // The image name passed (e.g., 'dog.jpg')
     const { name, description, comment } = req.body;  // Extract name, description, and comment from request body
