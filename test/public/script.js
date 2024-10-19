@@ -143,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const responseMessage = document.getElementById('responseMessage');
                 if (responseMessage) {
                     if (data.success) {
+                        responseMessage.style.display = 'inline';
                         responseMessage.textContent = 'Comment added successfully!';
                         responseMessage.style.color = 'green';
 
