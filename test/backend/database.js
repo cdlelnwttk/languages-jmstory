@@ -17,7 +17,7 @@ const initDb = async () => {
 
   try {
     // Read SQL file
-    const sql = fs.readFileSync(path.join(__dirname, '../init.sql')).toString();
+    const sql = fs.readFileSync(path.join(__dirname, '../db/init.sql')).toString();
 
     // Execute SQL file
     await client.query(sql);

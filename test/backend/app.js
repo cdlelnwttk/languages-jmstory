@@ -33,15 +33,11 @@ app.use(express.json());
 app.get('/image/:imageName', async (req, res) => {
     let imageName = req.params.imageName;  // The image name passed (e.g., 'dog.jpg')
     
-    
-
     console.log(`Fetching data for image: ${imageName}`); 
 
     try {
-
         // Fetch data from the database related to the image (using the table name that matches the image name)
-    
-        const queryResult = await pool.query(`SELECT * FROM ${imageName}`); // Assuming the table name matches the image name
+        const queryResult = await pool.query(`SELECT * FROM "${imageName}"`); // Assuming the table name matches the image name
         const imageData = queryResult.rows;  // Get all rows from the table
 
         if (imageData.length > 0) {
@@ -61,6 +57,7 @@ app.get('/image/:imageName', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch image data' });
     }
 });
+
 app.post('/add-image/:imageName', async (req, res) => {
     console.log("here after the form");
 
@@ -78,6 +75,6 @@ app.post('/add-image/:imageName', async (req, res) => {
         res.status(200).json({ success: true, data: result.rows[0] });
     } catch (error) {
         console.error('Error inserting data:', error);
-        res.status(500).json({ success: false, message: 'Error adding image data to the database.' });
+        res.status(500).json({ success: false, message: 'Error adding image data' });
     }
 });
