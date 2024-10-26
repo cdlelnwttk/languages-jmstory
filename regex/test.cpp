@@ -9,7 +9,7 @@ int main()
     int binary = 0B1'1;
     int binary = 0b1;
 
-    int hex = 0x'1'11'1;
-    int oct = 0';
+    int z = 0z;
+    int binary= 0b1ull;
     return 0;
 }
