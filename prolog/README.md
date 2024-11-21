@@ -3,14 +3,9 @@
 To run
 
 ```bash
-swipl -s prog.pl
+swipl -s movies.pl
 ```
 
-At the prompt, you can make queries or changes like
-```
-like(mike,apple).
-like(mary,apple).
-assert(food(apple)).
-cook(Food).
-```
-Pressing space repeatedly provides the food that both mike and mary like.  Control-D exists swi proglog console interface.
+At the prompt, do start. which will bring you list of movies that you will either decide to like or dislike. 
+Depending on the movies picked, the program will give a suggestion or will ask you further questions to get
+a better understanding of movies you like. 
