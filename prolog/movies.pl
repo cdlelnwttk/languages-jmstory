@@ -2,35 +2,20 @@
 :- dynamic likes/2.
 
 % Facts about movies and their attributes
-movie('The Dark Knight', [action, drama, modern, nolan]).
-movie('Inception', [action, drama, modern, nolan]).
-movie('Memento', [drama, modern, nolan, action]).
+movie('The Dark Knight', [action, modern, nolan]).
+movie('Inception', [action, modern, nolan]).
+movie('Memento', [drama, middle, nolan, action]).
 movie('Some Like it Hot', [romance, comedy, classic]).
-movie('Titanic', [romance, middle, cameron]).
-movie('True Lies', [action, romance, middle, cameron]).
-movie('Avatar', [action, modern, cameron]).
-movie('Terminator 2: Judgement Day', [action, middle, cameron]).
 movie('Psycho', [horror, classic, hitchcock]).
 movie('Vertigo', [drama, classic, hitchcock]).
-movie('The Birds', [horror, classic, hitchcock]).
 movie('Casablanca', [drama, romance, classic]).
 movie('Rosemarys Baby', [horror, classic]).
-movie('Rocky', [action, drama, middle]).
 movie('The Matrix', [romance, action, middle]).
 movie('The Godfather', [drama, action, middle]).
 movie('Eternal Sunshine of the Spotless Mind', [romance, drama, modern]).
 movie('Lost in Translation', [romance, comedy, modern]).
 movie('Breakfast at Tiffanys', [romance, comedy, classic]).
-movie('When Hary Met Sally', [romance, comedy, middle]).
-
-ask_movie(Movie) :-
-    movie(Movie, Attributes),
-    write('Do you like the movie: '), write(Movie), write('? (yes/no): '),
-    read(Response),
-    nl,  % This consumes the newline character
-    (   Response == yes -> assert_likes_attributes(Attributes);
-        Response == no -> true;
-        write('Invalid input. Please respond with yes or no.'), nl).
+movie('When Harry Met Sally', [romance, comedy, middle]).
 
 % Store and increment the count for each attribute that the user likes
 assert_likes_attributes(Attributes) :-
@@ -57,65 +42,152 @@ print_likes_list([likes(Attribute, Count) | Rest]) :-
     print_likes_list(Rest).
 
 % Find the highest count of liked attributes
-find_max_likes(MaxCount) :-
+find_max_likes(MaxCount, MostLikedAttributes) :-
     findall(Count, likes(_, Count), Counts),  % Collect all counts
     (   Counts == []                          % If no likes exist
-    ->  MaxCount = 0                          % Set MaxCount to 0 if the list is empty
-    ;   max_list(Counts, MaxCount)            % Otherwise, find the maximum count
+    ->  MaxCount = 0,                         % Set MaxCount to 0 if the list is empty
+        MostLikedAttributes = []              % Set MostLikedAttributes to an empty list
+    ;   max_list(Counts, MaxCount),           % Find the maximum count
+        findall(Attribute, likes(Attribute, MaxCount), MostLikedAttributes) % Collect all attributes with the max count
     ).
 
 % Print all attributes with the greatest number of likes
 print_most_liked :-
-    find_max_likes(MaxCount),                              % Get the highest count
+    find_max_likes(MaxCount, MostLikedAttributes), % Get the highest count
     (   MaxCount == 0                                     % If there are no likes (MaxCount is 0)
     ->  write('No likes recorded yet.'), nl
-    ;   findall(Attribute, likes(Attribute, MaxCount), Attributes),  % Find all attributes with the max count
-        print_attributes(Attributes)                             % Print those attributes
+    ;   print_attributes(MostLikedAttributes)                             % Print those attributes
     ).
 
 % Helper function to print each attribute
 print_attributes([]).
-print_attributes([Attribute | Rest]) :-
+print_attributes([Attribute | Rest]) :- 
     write(Attribute), nl,                      % Print the attribute
     print_attributes(Rest).
 
+
 % Main logic to handle ties or no likes
 handle_likes :-
-    find_max_likes(MaxCount),                              % Get the highest count
+    find_max_likes(MaxCount, MostLikedAttributes), % Get the highest count
     (   MaxCount == 0                                        % If no likes are present (MaxCount is 0)
     ->  tieMenu,                                            % Call tieMenu to handle the no likes case
         write('No likes recorded yet.'), nl
-    ;   findall(Attribute, likes(Attribute, MaxCount), Attributes),  % Find all attributes with the max count
-        length(Attributes, NumAttributes),                     % Get the number of attributes with the max count
+    ;   length(MostLikedAttributes, NumAttributes),        % Get the number of attributes with the max count
         (   NumAttributes > 1                                   % If there are ties (multiple attributes with the max count)
-        ->  tieMenu,                                            % Call tieMenu function to handle ties
-            write('There is a tie in your likes! Displaying movies for tied attributes:'), nl
-        ;   write('The most liked attribute is: '), write(MaxCount), nl    % If there is no tie, display the most liked attribute
+        ->                                            % Call tieMenu function to handle ties
+            tieMenu(MostLikedAttributes)
+        ;   MostLikedAttributes = [Head | _],                  % Extract the first attribute (Head)
+            write('The most liked attribute is: '), write(Head), nl,
+            handle_specific_attribute(Head)                    % Handle the specific attribute
         )
     ).
 
 % Function to handle ties and print a unique list of movies based on tied attributes
 tieMenu :-
-    write('Movies for tied attributes: '), nl.
+    write('Pick the movie you like out of these the best'), nl,
+    write('1: 13 Going on 30'), nl,
+    write('2: Star Wars: A New Hope'), nl,
+    write('3: A Beautiful Mind'), nl,
+    write('4: Halloween'), nl,
+    write('5: Gone With The Wind'), nl,
+    write('6: Barbie'), nl,
+    write('7: Tenet'), nl,
+    write('8: The Abyss'), nl, 
+    write('9: Rope'), nl,
+    write('10: Superbad'), nl,
+    write('11: Back to the Future'), nl,
+    % Input handling starts here
+    read_line_to_string(user_input, Response),
+    nl,
+    (   Response == "1" -> handle_specific_attribute(romance);
+        Response == "2" -> handle_specific_attribute(action);
+        Response == "3" -> handle_specific_attribute(drama);
+        Response == "4" -> handle_specific_attribute(horror);
+        Response == "5" -> handle_specific_attribute(classic);
+        Response == "6" -> handle_specific_attribute(modern);
+        Response == "7" -> handle_specific_attribute(nolan);
+        Response == "8" -> handle_specific_attribute(cameron);
+        Response == "9" -> handle_specific_attribute(hitchcock);
+        Response == "10" -> handle_specific_attribute(comedy);
+        Response == "11" -> handle_specific_attribute(middle);
+        % Invalid input case
+        write('Invalid input. Please respond with a number between 1 and 11.'), nl
+    ).
 
+
+% Map each movie to its attribute
+movie_attribute('13 Going on 30', romance).
+movie_attribute('Star Wars: A New Hope', action).
+movie_attribute('A Beautiful Mind', drama).
+movie_attribute('Halloween', horror).
+movie_attribute('Gone With The Wind', classic).
+movie_attribute('Barbie', modern).
+movie_attribute('Tenet', nolan).
+movie_attribute('The Abyss', cameron).
+movie_attribute('Rope', hitchcock).
+movie_attribute('Superbad', comedy).
+movie_attribute('Back to the Future', middle).
+
+% Function to handle ties and dynamically print movies for tied attributes
+tieMenu(MostLikedAttributes) :-
+    write('Pick the movie you like best from the following options:'), nl,
+    % Find all movies matching the tied attributes
+    findall(Movie, (movie_attribute(Movie, Attribute), member(Attribute, MostLikedAttributes)), Movies),
+    % Print the movies with their indices
+    print_movies(Movies, 1),
+    % Read user input
+    read_line_to_string(user_input, Response),
+    atom_number(Response, Index),
+
+    nth1(Index, Movies, ChosenMovie),
+    movie_attribute(ChosenMovie, ChosenAttribute),
+    handle_specific_attribute(ChosenAttribute).
+
+% Helper function to print movies with their indices
+print_movies([], _).
+print_movies([Movie | Rest], Index) :-
+    write(Index), write(': '), write(Movie), nl,
+    NextIndex is Index + 1,
+    print_movies(Rest, NextIndex).
+
+% Example of handle_specific_attribute predicate
+handle_specific_attribute(Attribute) :-
+    write('Recommended movie based on your choice: '), nl,
+    (   Attribute == romance -> write('The Notebook');
+        Attribute == action -> write('Gladiator');
+        Attribute == drama -> write('A Streetcar Named Desire');
+        Attribute == horror -> write('Scream');
+        Attribute == classic -> write('The Wizard of Oz');
+        Attribute == modern -> write('Barbie');
+        Attribute == nolan -> write('Interstellar');
+        Attribute == cameron -> write('Aliens');
+        Attribute == hitchcock -> write('Rear Window');
+        Attribute == comedy -> write('Dumb and Dumber');
+        Attribute == middle -> write('Apocalypse Now')
+    ), nl.
+
+
+% Ask the user about each movie in the list
+ask_movies :-
+    % Loop through each movie in the movie facts and ask about them
+    findall(Movie, movie(Movie, _), Movies),  % Find all movie names
+    foreach(member(Movie, Movies), ask_movie(Movie)).
+
+% Ask the user if they like a movie
+ask_movie(Movie) :-
+    movie(Movie, Attributes),
+    write('Do you like the movie: '), write(Movie), write('? (1 for yes/2 for no): '),
+    read_line_to_string(user_input, Response),  % Use read_line_to_string to handle input
+    nl,  % This consumes the newline character
+    (   Response == "1" -> assert_likes_attributes(Attributes);
+        Response == "2" -> true;
+        write('Invalid input. Please respond with yes or no.'), nl).
 
 % Main rule to start the program
 start :-
     retractall(likes(_, _)), % Clear the likes list at the start
-    ask_movie('The Dark Knight'),
-    ask_movie('Inception'),
-    ask_movie('When Harry Met Sally'),
-    ask_movie('Terminator 2: Judgement Day'),
-    ask_movie('Titanic'),
-    ask_movie('Casablanca'),
-    ask_movie('The Matrix'),
-    ask_movie('The Godfather'),
-    ask_movie('Pulp Fiction'),
-    ask_movie('The Shawshank Redemption'),
+    ask_movies,
     handle_likes.  % Call handle_likes to process the most liked attributes
-
-
-
 
 
 
