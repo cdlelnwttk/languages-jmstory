@@ -4,7 +4,7 @@
 % Facts about movies and their attributes
 movie('The Dark Knight', [action, modern, nolan]).
 movie('Inception', [action, modern, nolan]).
-movie('Memento', [drama, middle, nolan, action]).
+movie('Memento', [drama, middle, nolan]).
 movie('Some Like it Hot', [romance, comedy, classic]).
 movie('Psycho', [horror, classic, hitchcock]).
 movie('Vertigo', [drama, classic, hitchcock]).
