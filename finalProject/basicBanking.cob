@@ -119,7 +119,7 @@
                    DISPLAY "Date: " TRANSACTION-DATE
            END-READ.
 
-       SET-ACCOUNT-BALANCE.
+       SET-ACCOUNT-BALANCE. 
            DISPLAY "Enter a new account balance: "
            ACCEPT ACCOUNT-BALANCE
            DISPLAY "Account balance successfully updated!"
