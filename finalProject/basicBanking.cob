@@ -46,7 +46,8 @@
            DISPLAY "2. Withdraw Money"
            DISPLAY "3. Check Balance"
            DISPLAY "4. View Previous Transactions"
-           DISPLAY "5. Exit"
+           DISPLAY "5. Set Account Balance"
+           DISPLAY "6. Exit"
            ACCEPT USER-CHOICE
 
            EVALUATE USER-CHOICE
@@ -59,6 +60,8 @@
                WHEN 4
                    PERFORM VIEW-TRANSACTIONS
                WHEN 5
+                   PERFORM SET-ACCOUNT-BALANCE
+               WHEN 6
                    DISPLAY "Exiting the system. Goodbye!"
                    STOP RUN
                WHEN OTHER
@@ -115,6 +118,15 @@
                    DISPLAY "Amount: " TRANSACTION-AMOUNT
                    DISPLAY "Date: " TRANSACTION-DATE
            END-READ.
+
+       SET-ACCOUNT-BALANCE.
+           DISPLAY "Enter a new account balance: "
+           ACCEPT ACCOUNT-BALANCE
+           DISPLAY "Account balance successfully updated!"
+           DISPLAY "Updated Balance: " ACCOUNT-BALANCE
+           DISPLAY "Press Enter to return to the main menu..."
+           ACCEPT DUMMY
+           PERFORM MAIN-PROCESS.
 
 
 
